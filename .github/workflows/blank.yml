@@ -8,5 +8,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: run command hello world
+        id: id-foo
         run: |
-          echo "hello world"
+          hello-world=foo
+          echo "foobar=${hello-world}" >> GITHUB_OUTPUT
+          echo "foo=${hello-world}" >> GITHUB_ENV
+      - name: hi
+        run: |
+          echo "foo (ENV): $foo"
+          echo "foobar (OUTPUT): ${steps.id-foo.outputs.foobar} "
+          
+          
+          
+          
