@@ -10,14 +10,11 @@ jobs:
       - name: run command hello world
         id: id-foo
         run: |
-          hello-world=foo
-          echo "foobar=${hello-world}" >> GITHUB_OUTPUT
-          echo "foo=${hello-world}" >> GITHUB_ENV
+          hello_world=foo
+          echo "foobar=${hello_world}" >> $GITHUB_OUTPUT
+          echo "foo=${hello_world}" >> $GITHUB_ENV
+
       - name: hi
         run: |
           echo "foo (ENV): $foo"
-          echo "foobar (OUTPUT): ${steps.id-foo.outputs.foobar} "
-          
-          
-          
-          
+          echo "foobar (OUTPUT): ${{ steps.id-foo.outputs.foobar }}"
