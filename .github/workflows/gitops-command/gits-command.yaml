@@ -1,0 +1,6 @@
+git clone your git hub file https
+git config --global user.email "ldlq2005@gmail.com"
+git config --global user.name "quanldl"
+git commit -am "push trigger"
+git push origin main
+git pull origin main --rebase
