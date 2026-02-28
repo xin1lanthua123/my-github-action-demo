@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello Step
         run: |
-          echo " welcome to ghaction"
+          echo " welcome to ${{ vars.MY_NAME }}"
   goodbye:
     runs-on: ubuntu-latest
     needs: hello
