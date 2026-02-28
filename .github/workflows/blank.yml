@@ -1,9 +1,12 @@
 name: hello world
-on: workflow_dispatch:
+
+on:
+  workflow_dispatch:
+
 jobs:
   whats-up:
     runs-on: ubuntu-24.04
     steps:
       - name: run command hello world
         run: |
-          echo "hello world" 
+          echo "hello world"
