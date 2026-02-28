@@ -3,19 +3,20 @@ on:
   push:
     branches: 
       - main
-      - develop
-      - 'release/**'
-  pull_request:
-    branches:
-      - main 
+  #     - develop
+  #     - 'release/**'
+  # pull_request:
+  #   types:
+  #     - opened
+  #   branches:
+  #     - main 
     
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Step
-        run: |
-          echo " welcome to ghaction"
+        run: echo " welcome to ${{vars.MY_NAME}} "
   goodbye:
     runs-on: ubuntu-latest
     needs: hello
