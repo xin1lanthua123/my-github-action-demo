@@ -1,5 +1,7 @@
 name: hello world
-on: push
+on: workflow_dispatch
+env:
+    APP_ENV: production
     
 jobs:
   hello:
@@ -15,5 +17,14 @@ jobs:
       - name: Hello Step
         run: |
           echo " say goodbye to ${{secrets.DOCKER_PASSWORD}}"
+  env-demo:
+    runs-on: ubuntu-latest
+    env:
+        JOB_PART: production
+    steps: 
+        - name: connect to env
+          run: |
+            echo  "App is connecting to $APP_ENV "
+            echo  "App is connecting to $JOB_PART "
           
         
