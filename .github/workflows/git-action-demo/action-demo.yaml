@@ -10,6 +10,7 @@ jobs:
 
       - name: print index.html
         run: cat index.html
+        
       - name: Hello Step
         run: |
           echo " welcome to ${{ vars.MY_NAME }}"
