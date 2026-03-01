@@ -1,4 +1,4 @@
-name: hello world
+name: git-action
 on: push
     
 jobs:
