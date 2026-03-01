@@ -6,6 +6,7 @@ on:
         description: choose env to deploy
         required: true
         type: choice
+        default: development
         options:
           - development
           - production
