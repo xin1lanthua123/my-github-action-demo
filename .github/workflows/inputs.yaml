@@ -1,5 +1,6 @@
 name: Inputs demo
-on: 
+
+on:
   workflow_dispatch:
     inputs:
       enviroment:
@@ -14,6 +15,8 @@ on:
       artifact_tags:
         description: choose git tag to deploy
         required: true
+        type: string
+
 jobs:
   inputs-demo:
     runs-on: ubuntu-24.04
@@ -21,4 +24,4 @@ jobs:
       - name: deploy the app
         run: |
           echo "Deploy application to ${{ github.event.inputs.enviroment }}"
-          echo "Deploy artifact tag ${{ github.event.inputs.artifact_tags }}""
+          echo "Deploy artifact tag ${{ github.event.inputs.artifact_tags }}"
