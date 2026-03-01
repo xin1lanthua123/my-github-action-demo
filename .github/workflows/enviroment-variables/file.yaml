@@ -1,6 +1,8 @@
 name: ENV demo
 on:
     workflow_dispatch:
+    push:
+        - main
 env:
     WORKFLOW_LEVEL_ENV: production
 jobs:
