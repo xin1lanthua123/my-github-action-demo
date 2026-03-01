@@ -8,10 +8,12 @@ env:
 jobs:
     env-demo:
         runs-on: ubuntu-latest
-        JOB_LEVEL_ENV: production
+        env:
+            JOB_LEVEL_ENV: production
         steps:
             - name: connect to env
-              STEP_LEVEL_ENV: production
+              env:
+                STEP_LEVEL_ENV: production
               run: |
                 echo  "App is connecting to $APP_ENV "
                 echo  "App is connecting to $JOB_PART "
