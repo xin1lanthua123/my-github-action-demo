@@ -2,13 +2,14 @@ name: ENV demo
 on:
     workflow_dispatch:
 env:
-    APP_ENV: production
+    WORKFLOW_LEVEL_ENV: production
 jobs:
     env-demo:
         runs-on: ubuntu-latest
-        JOB_PART: production
+        JOB_LEVEL_ENV: production
         steps:
             - name: connect to env
+              STEP_LEVEL_ENV: production
               run: |
                 echo  "App is connecting to $APP_ENV "
                 echo  "App is connecting to $JOB_PART "
