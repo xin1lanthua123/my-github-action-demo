@@ -6,7 +6,7 @@ env:
 jobs:
     env-demo:
         runs-on: ubuntu-latest
-        JOB_PART: production
+        
         steps:
             - name: connect to env
               run: |
