@@ -4,3 +4,11 @@ git config --global user.name "quanldl"
 git commit -am "push trigger"
 git push origin main
 git pull origin main --rebase
+
+----
+cd terraform-folder
+git init
+git remote add origin https://github.com/yourname/my-app-infra.git
+git add .
+git commit -m "Initial infra"
+git push -u origin main

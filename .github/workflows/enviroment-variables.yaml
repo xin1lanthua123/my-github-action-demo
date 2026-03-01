@@ -1,4 +1,4 @@
-name: ENV demo
+name: enviroment-variables
 on:
     workflow_dispatch:
     push:
