@@ -13,7 +13,7 @@ jobs:
         run: |
             echo " ${{toJson(github)}} "
 
-      - name: print githu env object
+      - name: print github env object
         run: |
             echo " ${{github.env}}} "
       
