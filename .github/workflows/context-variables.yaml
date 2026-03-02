@@ -8,8 +8,12 @@ jobs:
       - name: Use context variable
         run: |
             echo "This workflow is triggered by ${{ github.actor }} "
-            echo "The repository is ${{ github.repository }}"
+            echo "The repository is ${{ github.repository }} in the branch: ${{github.ref_name}}"
       - name: print all github object variable types
         run: |
             echo " ${{toJson(github)}} "
+
+      - name: print githu env object
+        run: |
+            echo " ${{github.env}}} "
       
