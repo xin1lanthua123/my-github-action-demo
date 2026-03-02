@@ -8,7 +8,7 @@ on:
 jobs:
     quality-check:
         runs-on: ubuntu-latest
-        if: startsWith(github.ref_name,'feature/') && github.event_name == 'push'
+        if: startsWith(github.ref_name,'main') && github.event_name == 'push'
         steps:
             - name: perform code quality
               run: echo "performing quality checks on the code "
@@ -38,7 +38,7 @@ jobs:
            
     failed-notification:
         runs-on: ubuntu-latest
-        if: always() && failure()
+        if: failure()
         needs:
             - quality-check
             - dev-deploy
