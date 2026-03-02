@@ -24,19 +24,29 @@ jobs:
         steps:
             - name: perform code quality
               run: echo "deploying the code to ${{github.ref_name}}" 
-    notification:
+    successful-notification:
         runs-on: ubuntu-latest
-        if: always()
+        if: always() && !failure()
         needs:
             - quality-check
             - dev-deploy
             - prod-deploy
         steps:
             - name: successfull notification
-              if: success()
-              run: echo "workflow successfully runs" 
+           
+              run: echo "email is working" 
+           
+    failed-notification:
+        runs-on: ubuntu-latest
+        if: always() && failure()
+        needs:
+            - quality-check
+            - dev-deploy
+            - prod-deploy
+        steps:
+          
             - name:  failed notification
-              if: failure()
-              run: echo "workflow failed to run"
+          
+              run: echo "email is  failed to send"
 
     
