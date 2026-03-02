@@ -1,0 +1,13 @@
+name: Inputs demo
+on: 
+  push:
+jobs:
+  context-demo:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Use context variable
+        run: |
+            echo "This workflow is triggered by ${{ github.actor }} "
+            echo "The repository is ${{ github.repository }}"
+            
+      

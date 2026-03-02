@@ -4,7 +4,7 @@ git config --global user.name "quanldl"
 git commit -am "push trigger"
 git push origin main
 git pull origin main --rebase
-
+git remote -v
 ----
 cd terraform-folder
 git init
