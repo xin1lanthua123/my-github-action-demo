@@ -11,6 +11,5 @@ jobs:
             echo "The repository is ${{ github.repository }}"
       - name: print all github object variable types
         run: |
-            echo " ${{toJson(github)}}
-            
+            echo " ${{toJson(github)}} "
       
