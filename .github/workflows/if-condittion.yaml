@@ -1,0 +1,14 @@
+name: If Condition (Build and Deploy)
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Step
+        run: echo "running this step as the notification"
