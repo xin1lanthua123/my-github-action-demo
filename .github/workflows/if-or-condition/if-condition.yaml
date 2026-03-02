@@ -1,0 +1,19 @@
+name: If Condition
+
+on:
+  push:
+    branches:
+      - main
+      - feature/demo
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run this step if the branch is main
+        if: github.ref == 'refs/heads/main'
+        run: echo "running this step as the main branch notification"
+
+      - name: Run this step if the branch is feature/demo
+        if: github.ref == 'refs/heads/feature/demo'
+        run: echo "running this step as the feature/demo branch notification"
