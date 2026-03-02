@@ -5,6 +5,9 @@ on:
         branches:
         - main
         - feature/demo
+    pull_request:
+        - opened
+        - synchronize
 
 jobs:
   demo:
