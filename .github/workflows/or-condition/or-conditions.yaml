@@ -1,0 +1,22 @@
+ name: Or Condition
+
+on:
+  push:
+    branches:
+      - main
+      - feature/demo
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print github actor
+        run: |
+          echo "${{github.actor}}"
+          
+      - name: Run for Javahometech or Hari
+        if: github.actor == 'Hari' || github.actor == 'javahometech'
+        run: |
+            echo "running this step as the main branch notification"
+
+    
