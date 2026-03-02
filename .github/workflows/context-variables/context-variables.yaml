@@ -1,0 +1,23 @@
+name: context variables
+on: 
+  push:
+jobs:
+  context-demo:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Use context variable
+        run: |
+            echo "This workflow is triggered by ${{ github.actor }} "
+            echo "The repository is ${{ github.repository }} in the branch: ${{github.ref_name}}"
+      - name: print all github object variable types
+        run: |
+            echo " ${{toJson(github)}} "
+
+      - name: print github env object
+        run: |
+            printenv
+        
+      - name: print env variables
+        run: |
+            echo "$GITHUB_SHA"
+      

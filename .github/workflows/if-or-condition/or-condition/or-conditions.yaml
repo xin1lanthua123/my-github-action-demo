@@ -1,10 +1,10 @@
- name: Or Condition
+name: Or Condition
 
 on:
-  push:
-    branches:
-      - main
-      - feature/demo
+    push:
+        branches:
+        - main
+        - feature/demo
 
 jobs:
   demo:

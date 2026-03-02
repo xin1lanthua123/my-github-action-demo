@@ -1,4 +1,4 @@
- name: Or Condition
+name: Or Condition
 
 on:
   push:
