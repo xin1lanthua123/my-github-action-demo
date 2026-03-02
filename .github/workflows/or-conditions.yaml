@@ -10,14 +10,14 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     env:
-        repo: ${{github.action}}
+        repo: ${{github.actor}}
     steps:
       - name: print github actor
         run: |
           echo "${{github.actor}}"
           
       - name: Run for Javahometech or Hari
-        if:  github.actor == '$repo'
+        if:  github.actor == env.repo
         run: |
             echo "running this step as the main branch notification"
 
