@@ -15,5 +15,5 @@ jobs:
 
       - name: print github env object
         run: |
-            echo " ${{github.env}}} "
+            printenv
       
