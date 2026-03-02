@@ -1,4 +1,4 @@
-name: Inputs demo
+name: context variables
 on: 
   push:
 jobs:
