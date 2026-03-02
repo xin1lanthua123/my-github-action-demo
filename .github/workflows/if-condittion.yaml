@@ -1,6 +1,8 @@
 name: If Condition/feature/demo
 
 on:
+  push:
+    
   pull_request:
     types:
       - opened
