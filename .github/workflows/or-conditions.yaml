@@ -17,7 +17,7 @@ jobs:
           echo "${{github.actor}}"
           
       - name: Run for Javahometech or Hari
-        if: github.actor == 'Hari' || github.actor == '$repo'
+        if:  github.actor == '$repo'
         run: |
             echo "running this step as the main branch notification"
 
