@@ -2,15 +2,23 @@ name: If Condition/feature/demo
 
 on:
   push:
-    
+    branches:
+        - main
   pull_request:
     types:
       - opened
       - synchronize
 
 jobs:
-  demo:
+  build:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Build Step
+        run: echo "running this step as the notification"
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.ref_name == 'main'
     steps:
       - name: Build Step
         run: echo "running this step as the notification"
