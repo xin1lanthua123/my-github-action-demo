@@ -4,6 +4,8 @@ on:
 jobs:
     call-greeting:
         uses: ./.github/workflows/reusable-workflow.yaml
+        with: 
+            version: 0.5.3
   
         
         
