@@ -1,0 +1,25 @@
+name: Test Environment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-production-env:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+
+    steps:
+      - name: Print environment info
+        run: |
+          echo "Deploying to production environment"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Actor: ${{ github.actor }}"
+
+      - name: Simulate deploy
+        run: |
+          echo "Running deployment step..."
+          sleep 5
+          echo "Deployment finished!"
